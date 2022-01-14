@@ -69,7 +69,7 @@ public class Menu {
                 List<Sala> listaDeChamada = alunoas.getSalaList();
                 for(Sala sala : listaDeChamada) {
                 
-                System.out.println("---Data: " + sala.getData());    
+                   
                 System.out.println("---Data: " + sala.getData());
                 System.out.println("---Nome: " + sala.getNomAluno());
                 System.out.println("---Status: " + sala.getChamada());
