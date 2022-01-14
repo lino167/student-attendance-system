@@ -34,13 +34,10 @@ public class Menu {
 
     }
     
-    public static void input(int option) throws Exception {
+    public static <string> void input(int option) throws Exception {
         switch (option) {
             case 1:{
                 Scanner scanner = new Scanner(System.in);
-
-                System.out.print("Digite a data: ");
-                String data = scanner.nextLine();
 
                 System.out.print("Digite o nome do aluno: ");
                 String nomAluno = scanner.nextLine();
@@ -48,13 +45,10 @@ public class Menu {
                 System.out.print("Digite presente/ausente: ");
                 String chamada = scanner.next();
 
-
-                SimpleDateFormat dataFormat = new SimpleDateFormat("dd/MM/yyyy");
                
 
 
-                Sala novaChamada = new Sala(data, nomAluno, chamada);
-                novaChamada.setData(data);
+                Sala novaChamada = new Sala(nomAluno, chamada);
                 novaChamada.setNomAluno(nomAluno);
                 novaChamada.setChamada(chamada);
 
@@ -66,14 +60,17 @@ public class Menu {
             }
 
             case 2: {
+                Date data = new Date();
+                SimpleDateFormat dataFormat = new SimpleDateFormat("dd/MM/yyyy " + "hh:mm");
+                String dataFormatada = dataFormat.format(data);
+                System.out.println(dataFormatada);
+
                 List<Sala> listaDeChamada = alunoas.getSalaList();
                 for(Sala sala : listaDeChamada) {
+            
+                System.out.printf("%50d%15d", sala.getNomAluno() + " - " + sala.getChamada());
                 
-                   
-                System.out.println("---Data: " + sala.getData());
-                System.out.println("---Nome: " + sala.getNomAluno());
-                System.out.println("---Status: " + sala.getChamada());
-                System.out.println("------------------------------------------------------");
+               
 
         }
 

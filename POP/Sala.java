@@ -3,22 +3,13 @@ package POP;
 import java.util.Date;
 
 public class Sala {
-    private String  data;
     private String nomAluno;
     private String chamada;
     
-    public Sala(String data, String nomAluno, String chamada) {
-        this.data = data;
+    public Sala(String nomAluno, String chamada) {
+        
         this.nomAluno = nomAluno;
         this.chamada = chamada;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
     }
 
     public String getNomAluno() {
